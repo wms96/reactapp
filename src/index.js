@@ -1,20 +1,23 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import {BrowserRouter, HashRouter} from "react-router-dom";
 
-ReactDOM.render(
-    <React.StrictMode>
-        <HashRouter>
-            <App />
-        </HashRouter>
-    </React.StrictMode>,
-    document.getElementById('root')
-);
+import React, { Component } from 'react';
+import { HashRouter, Route, Link } from "react-router-dom";
+import Surveys from "./pages/Surveys/Surveys";
+import Details from "./pages/Details/Details";
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+class App extends Component {
+    render() {
+        return (
+            <HashRouter basename="/">
+                <div>
+                    <Route exact path="/" component={Home} />
+                    <Route path="/:code" component={<Details/>} />
+                </div>
+            </HashRouter>
+        );
+    }
+}
+
+const Home = () =><Surveys/>
+const Details = () =><Details/>
+
+export default App;
