@@ -18,6 +18,5 @@ class App extends Component {
 }
 
 const Home = () =><Surveys/>
-const Details = () =><Details/>
 
 export default App;

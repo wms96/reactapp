@@ -30,8 +30,6 @@
     "predeploy" : "npm run build",
     "deploy" : "gh-pages -d build"
   },
-  "proxy": "http://localhost:3000",
-
   "homepage": "https://wms96.github.io/reactapp",
   "eslintConfig": {
     "extends": [
